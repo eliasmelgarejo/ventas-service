@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class ProductsController {
+public class ProductController {
 
     private final ProductService productService;
 
-    public ProductsController(ProductService productService) {
+    public ProductController(ProductService productService) {
         this.productService = productService;
     }
 

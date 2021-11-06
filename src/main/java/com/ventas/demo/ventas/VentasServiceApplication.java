@@ -1,8 +1,12 @@
 package com.ventas.demo.ventas;
 
+import com.ventas.demo.ventas.entities.CategoryDiscountRule;
 import com.ventas.demo.ventas.entities.Product;
 import com.ventas.demo.ventas.entities.ProductCategory;
+import com.ventas.demo.ventas.entities.ProductPrice;
+import com.ventas.demo.ventas.services.CategoryDiscountRuleService;
 import com.ventas.demo.ventas.services.ProductCategoryService;
+import com.ventas.demo.ventas.services.ProductPriceService;
 import com.ventas.demo.ventas.services.ProductService;
 import com.ventas.demo.ventas.services.shared.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +21,10 @@ public class VentasServiceApplication implements CommandLineRunner {
     private ProductService productService;
     @Autowired
     private ProductCategoryService productCategoryService;
+	@Autowired
+	private ProductPriceService productPriceService;
+	@Autowired
+	private CategoryDiscountRuleService categoryDiscountRuleService;
 
 
     public static void main(String[] args) {
@@ -121,6 +129,180 @@ public class VentasServiceApplication implements CommandLineRunner {
 					        .code("MUE3")
 					        .name("Cama")
 					        .productCategory(productCategory4).build());
+
+            // Precios
+			ProductPrice productPrice1 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product1)
+					        .minQuantity(1.0)
+							.maxQuantity(5.0)
+					        .price(120000.0).build());
+
+			ProductPrice productPrice2 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product1)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+
+			ProductPrice productPrice3 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product2)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice4 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product2)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice5 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product3)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice6 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product3)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice7 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product4)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice8 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product4)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice9 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product5)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice10 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product5)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice11 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product6)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice12 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product6)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice13 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product7)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice14 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product7)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice15 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product8)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice16 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product8)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice17 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product9)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice18 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product9)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice19 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product10)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice20 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product10)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice21 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product11)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice22 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product11)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			ProductPrice productPrice23 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product12)
+					        .minQuantity(1.0)
+					        .maxQuantity(5.0)
+					        .price(120000.0).build());
+			ProductPrice productPrice24 = productPriceService.create(
+					ProductPrice.builder()
+					        .product(product12)
+					        .minQuantity(6.0)
+					        .maxQuantity(10.0)
+					        .price(100000.0).build());
+			// Reglas de descuento categorias
+
+			CategoryDiscountRule categoryDiscountRule1 = categoryDiscountRuleService.create(
+					CategoryDiscountRule.builder()
+					        .category(productCategory1)
+							.minQuantity(10.0)
+					        .maxQuantity(20.0)
+							.discountPercentage(5.0).build());
+			CategoryDiscountRule categoryDiscountRule2 = categoryDiscountRuleService.create(
+					CategoryDiscountRule.builder()
+					        .category(productCategory2)
+					        .minQuantity(10.0)
+					        .maxQuantity(20.0)
+					        .discountPercentage(5.0).build());
+			CategoryDiscountRule categoryDiscountRule3 = categoryDiscountRuleService.create(
+					CategoryDiscountRule.builder()
+					        .category(productCategory3)
+					        .minQuantity(10.0)
+					        .maxQuantity(20.0)
+					        .discountPercentage(5.0).build());
+			CategoryDiscountRule categoryDiscountRule4 = categoryDiscountRuleService.create(
+					CategoryDiscountRule.builder()
+					        .category(productCategory4)
+					        .minQuantity(10.0)
+					        .maxQuantity(20.0)
+					        .discountPercentage(5.0).build());
 
 
         } catch (ValidationException e) {

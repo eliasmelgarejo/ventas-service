@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
 @Data
@@ -21,17 +22,16 @@ public class ProductPrice {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
-    @NotBlank
+
     private Double minQuantity;
 
-    @NotBlank
+
     private Double maxQuantity;
 
-    @NotBlank
+
     private Double price;
 }

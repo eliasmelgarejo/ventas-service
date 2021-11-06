@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface ProductPriceService extends ServiceBase<ProductPrice> {
 
-  Optional<ProductPrice> findByProductAndQuantity(Long productId, Double quantity);
+  ProductPrice findByProductAndQuantity(Long productId, Double quantity);
 
 }

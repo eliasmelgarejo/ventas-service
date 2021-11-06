@@ -21,17 +21,16 @@ public class CategoryDiscountRule {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank
     @ManyToOne
     @JoinColumn(name = "product_category_id")
     private ProductCategory category;
 
-    @NotBlank
+
     private Double minQuantity;
 
-    @NotBlank
+
     private Double maxQuantity;
 
-    @NotBlank
+
     private Double discountPercentage;
 }

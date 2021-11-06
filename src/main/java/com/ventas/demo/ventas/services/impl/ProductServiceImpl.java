@@ -29,7 +29,6 @@ public class ProductServiceImpl extends ServiceBaseGeneric<Product> implements P
 
     @Override
     public List<Product> findByProductCategory(Long categoryId) {
-
         return productRepository.findByProductCategory(
                 productCategoryRepository.findById(categoryId).orElse(ProductCategory.builder().build())
         );

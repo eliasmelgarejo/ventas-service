@@ -24,7 +24,6 @@ public abstract class ServiceBaseGeneric <T> {
     }
 
     @Transactional
-
     public T create(T entity) throws ValidationException {
         validate(entity, ValidationContext.CREATE);
         return (T) getRepository().save(entity);

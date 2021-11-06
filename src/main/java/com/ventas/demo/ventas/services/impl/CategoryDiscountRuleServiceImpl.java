@@ -6,9 +6,11 @@ import com.ventas.demo.ventas.repositories.CategoryDiscountRuleRepository;
 import com.ventas.demo.ventas.services.CategoryDiscountRuleService;
 import com.ventas.demo.ventas.services.shared.ServiceBaseGeneric;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class CategoryDiscountRuleServiceImpl extends ServiceBaseGeneric<CategoryDiscountRule>  implements CategoryDiscountRuleService {
     private final CategoryDiscountRuleRepository repository;
 
@@ -23,6 +25,6 @@ public class CategoryDiscountRuleServiceImpl extends ServiceBaseGeneric<Category
 
     @Override
     public Optional<CategoryDiscountRule> findByProductCategoryAndQuantity(Long productCategoryId, Double quantity) {
-        return Optional.empty();
+        return repository.findByCategoryIdAndQuantity(productCategoryId, quantity);
     }
 }

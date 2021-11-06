@@ -36,7 +36,7 @@ public class Sale {
     @Column(nullable = false, length = 50, unique = true)
     private String customer;
 
-    @NotBlank
+
     private Double totalAmount;
 
     @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL,orphanRemoval = true)
