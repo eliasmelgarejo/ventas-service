@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface CategoryDiscountRuleRepository extends JpaRepository<CategoryDiscountRule,Long> {
-    @Query("SELECT cdr FROM CategoryDiscountRule cdr WHERE cdr.category.id = :categoryId and cdr.minQuantity <= :quantity and cdr.maxQuantity >= :quantity")
-    Optional<CategoryDiscountRule> findByCategoryIdAndQuantity(@Param("categoryId") Long categoryId,@Param("quantity") Double quantity);
+
+    @Query(value = "SELECT * FROM category_discount_rule WHERE product_category_id = :categoryId and :quantity >= min_quantity and :quantity <= max_quantity", nativeQuery = true)
+    CategoryDiscountRule findByCategoryIdAndQuantity(@Param("categoryId") Long categoryId,@Param("quantity") Double quantity);
 }

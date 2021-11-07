@@ -28,6 +28,7 @@ public class ProductPriceController {
         System.out.println("productId: " + productId);
         System.out.println("quantity: " + quantity);
         ProductPrice productPrice = service.findByProductAndQuantity(productId, quantity);
+        System.out.println("ProductPrice: "+productPrice);
         if(productPrice != null) {
             return ResponseEntity.ok(productPrice);
         }

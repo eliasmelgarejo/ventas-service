@@ -9,6 +9,7 @@ import com.ventas.demo.ventas.services.ProductCategoryService;
 import com.ventas.demo.ventas.services.ProductPriceService;
 import com.ventas.demo.ventas.services.ProductService;
 import com.ventas.demo.ventas.services.shared.ValidationException;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -40,6 +41,7 @@ public class VentasServiceApplication implements CommandLineRunner {
     private void loadData() {
         //Categorias
         try {
+			System.out.println("Populate Database. Table product_category...");
             ProductCategory productCategory1 = productCategoryService.create(
                     ProductCategory.builder()
                             .code("EL")
@@ -68,6 +70,7 @@ public class VentasServiceApplication implements CommandLineRunner {
                             .name("Muebles")
                             .color("#FFFF00").build());
 
+			System.out.println("Populate Database. Table product...");
             //Productos
             Product product1 = productService.create(
                     Product.builder()
@@ -130,6 +133,7 @@ public class VentasServiceApplication implements CommandLineRunner {
 					        .name("Cama")
 					        .productCategory(productCategory4).build());
 
+			System.out.println("Populate Database. Table product_price...");
             // Precios
 			ProductPrice productPrice1 = productPriceService.create(
 					ProductPrice.builder()
@@ -277,8 +281,9 @@ public class VentasServiceApplication implements CommandLineRunner {
 					        .minQuantity(6.0)
 					        .maxQuantity(10.0)
 					        .price(100000.0).build());
-			// Reglas de descuento categorias
 
+			System.out.println("Populate Database. Table category_discount_rule...");
+			// Reglas de descuento categorias
 			CategoryDiscountRule categoryDiscountRule1 = categoryDiscountRuleService.create(
 					CategoryDiscountRule.builder()
 					        .category(productCategory1)

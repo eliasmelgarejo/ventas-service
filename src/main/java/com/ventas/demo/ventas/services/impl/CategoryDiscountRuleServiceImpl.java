@@ -24,7 +24,7 @@ public class CategoryDiscountRuleServiceImpl extends ServiceBaseGeneric<Category
     }
 
     @Override
-    public Optional<CategoryDiscountRule> findByProductCategoryAndQuantity(Long productCategoryId, Double quantity) {
+    public CategoryDiscountRule findByProductCategoryAndQuantity(Long productCategoryId, Double quantity) {
         return repository.findByCategoryIdAndQuantity(productCategoryId, quantity);
     }
 }

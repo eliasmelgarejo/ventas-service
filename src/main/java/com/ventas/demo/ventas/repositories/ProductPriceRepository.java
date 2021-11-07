@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface ProductPriceRepository extends JpaRepository<ProductPrice,Long> {
-    @Query(value = "select * from product_price p where p.product_id = :productId and p.min_quantity <= :quantity and p.max_quantity >= :quantity ", nativeQuery = true)
+    @Query(value = "select * from product_price p where p.product_id = :productId and :quantity >= p.min_quantity and :quantity <= p.max_quantity ", nativeQuery = true)
     ProductPrice findByProductIdAndQuantity(@Param("productId") Long productId,@Param("quantity") Double quantity);
 }

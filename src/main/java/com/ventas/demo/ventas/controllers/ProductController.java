@@ -17,6 +17,11 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @GetMapping("/products")
+    public List<Product> findAll(){
+        return productService.findAll();
+    }
+
     @GetMapping("/products/category/{categoryId}")
     public List<Product> getProductsByCategoryId(@PathVariable Long categoryId) {
         return productService.findByProductCategory(categoryId);

@@ -5,5 +5,5 @@ import com.ventas.demo.ventas.services.shared.ServiceBase;
 import java.util.Optional;
 
 public interface CategoryDiscountRuleService extends ServiceBase<CategoryDiscountRule> {
-    Optional<CategoryDiscountRule> findByProductCategoryAndQuantity(Long productCategoryId, Double quantity);
+    CategoryDiscountRule findByProductCategoryAndQuantity(Long productCategoryId, Double quantity);
 }

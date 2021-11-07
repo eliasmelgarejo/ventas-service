@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name = "category_discount_rule",
         uniqueConstraints = {@UniqueConstraint(
-                columnNames = {"product_category_id", "minquantity", "maxquantity", "discountpercentage"})})
+                columnNames = {"product_category_id", "minquantity", "maxquantity"})})
 public class CategoryDiscountRule {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,12 +25,12 @@ public class CategoryDiscountRule {
     @JoinColumn(name = "product_category_id")
     private ProductCategory category;
 
-
+    @Column(name = "min_quantity")
     private Double minQuantity;
 
-
+    @Column(name = "max_quantity")
     private Double maxQuantity;
 
-
+    @Column(name = "discount_percentage")
     private Double discountPercentage;
 }
