@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name = "category_discount_rule",
         uniqueConstraints = {@UniqueConstraint(
-                columnNames = {"product_category_id", "minquantity", "maxquantity"})})
+                columnNames = {"product_category_id", "min_quantity", "max_quantity"})})
 public class CategoryDiscountRule {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
