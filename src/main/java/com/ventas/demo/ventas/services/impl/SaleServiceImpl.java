@@ -20,4 +20,5 @@ public class SaleServiceImpl extends ServiceBaseGeneric<Sale> implements SaleSer
     public JpaRepository getRepository() {
         return repository;
     }
+
 }

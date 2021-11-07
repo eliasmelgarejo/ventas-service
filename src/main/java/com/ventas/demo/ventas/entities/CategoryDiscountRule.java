@@ -9,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
